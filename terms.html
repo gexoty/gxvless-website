@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика Конфидециальности | GXVless</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7700ff;
+            --bg-dark: #0a0b10;
+            --card-bg: #161821;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --gradient: linear-gradient(135deg, #9900ff 0%, #5900ff 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding-top: 100px;
+        }
+
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(10, 11, 16, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            text-decoration: none;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 100px;
+        }
+
+        .content-box {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin: 30px 0 15px;
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            padding: 50px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .content-box { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">GXVless</a>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-link">← На главную</a>
+        
+        <div class="content-box">
+    <h1>Политика использования сервиса GXVLESS</h1>
+
+    <p>
+        Настоящий документ устанавливает правила и ограничения при использовании ресурсов сервиса GXVLESS.
+        Цель данной политики - обеспечить стабильную, безопасную и качественную работу Сервиса для всех пользователей.
+    </p>
+
+    <h2>1. Общие требования</h2>
+    <p>
+        1.1. Пользуясь Сервисом, вы обязуетесь не использовать его для деятельности, которая нарушает
+        законодательство Российской Федерации, страны вашего фактического местонахождения или страны,
+        в которой расположен сервер подключения.<br><br>
+        1.2. Сервис предназначен исключительно для личного, некоммерческого использования.
+        Перепродажа доступа или использование Сервиса в составе коммерческих продуктов
+        без предварительного согласования с Администрацией запрещены.
+    </p>
+
+    <h2>2. Запрещённая деятельность</h2>
+    <p>В рамках использования GXVLESS строго запрещено:</p>
+
+    <ul style="color: var(--text-dim); padding-left: 20px; margin-bottom: 20px;">
+        <li>
+            <strong>Сетевые атаки:</strong> проведение DDoS-атак, сканирование портов,
+            попытки несанкционированного доступа к серверам, сетям и сервисам третьих лиц.
+        </li>
+        <li>
+            <strong>Спам и фишинг:</strong> массовая рассылка нежелательных сообщений,
+            создание фишинговых страниц, а также использование Сервиса для управления бот-сетями.
+        </li>
+        <li>
+            <strong>Распространение вредоносного ПО:</strong> передача вирусов, троянов,
+            эксплойтов и любого иного вредоносного программного кода.
+        </li>
+        <li>
+            <strong>Незаконный контент:</strong> загрузка, просмотр или распространение материалов,
+            нарушающих авторские права, а также контента, запрещенного действующим законодательством
+            (включая материалы, пропагандирующие насилие, экстремизм и иные противоправные действия).
+        </li>
+        <li>
+            <strong>Майнинг:</strong> использование вычислительных мощностей серверов и сетевого трафика
+            для майнинга любых криптовалют.
+        </li>
+    </ul>
+
+    <h2>3. Технические ограничения</h2>
+    <p>
+        3.1. <strong>Нагрузка на сеть:</strong> мы не устанавливаем жестких лимитов на объем трафика,
+        однако оставляем за собой право временно ограничить скорость подключения, если активность пользователя
+        создает критическую нагрузку на канал и негативно влияет на качество сервиса для других пользователей
+        (включая автоматизированные скрипты и массовый парсинг данных).
+    </p>
+
+    <h2>4. Ответственность за нарушения</h2>
+    <p>
+        4.1. В случае выявления нарушений настоящей Политики Администрация Сервиса вправе:
+    </p>
+
+    <ul style="color: var(--text-dim); padding-left: 20px; margin-bottom: 20px;">
+        <li>Направить предупреждение Пользователю.</li>
+        <li>Временно ограничить скорость или функциональность подключения.</li>
+        <li>
+            Бессрочно заблокировать доступ к Сервису без возврата денежных средств (если применимо)
+            и без обязательства предоставлять объяснение причин.
+        </li>
+    </ul>
+
+    <p>
+        4.2. Исполнитель вправе передать информацию о Пользователе правоохранительным органам
+        в случае получения официального запроса, если действия Пользователя носят криминальный характер.
+    </p>
+
+    <h2>5. Отказ от ответственности за действия пользователя</h2>
+    <p>
+        5.1. Пользователь несет полную и единоличную ответственность за все действия,
+        совершенные через наши интернет соединения.<br><br>
+        5.2. Исполнитель не несет ответственности за любой ущерб,
+        причиненный третьим лицам в результате нарушения Пользователем настоящей Политики.
+    </p>
+</div>
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 GXVless. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>
