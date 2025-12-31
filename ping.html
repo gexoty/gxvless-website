@@ -51,6 +51,7 @@
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-decoration: none;
         }
 
         .container {
@@ -118,7 +119,6 @@
             color: var(--primary);
         }
 
-        /* Кнопка */
         .btn-check {
             background: var(--gradient);
             color: white;
@@ -143,13 +143,6 @@
             transform: none;
         }
 
-        footer {
-            padding: 50px 5%;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-dim);
-        }
-
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -160,8 +153,11 @@
             transition: opacity 0.3s;
         }
 
-        .back-link:hover {
-            opacity: 0.8;
+        footer {
+            padding: 50px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-dim);
         }
 
         .footer-links {
@@ -179,15 +175,10 @@
             transition: color 0.3s ease;
         }
 
-        .footer-link:hover {
-            color: var(--primary);
-        }
+        .footer-link:hover { color: var(--primary); }
 
         @media (max-width: 480px) {
-            .footer-links {
-                flex-direction: column;
-                gap: 10px;
-            }
+            .footer-links { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -200,10 +191,9 @@
     <div class="container">
         <a href="index.html" class="back-link">← На главную</a>
         <h1>Проверка узлов</h1>
-        <p class="subtitle">Измерьте задержку до наших серверов напрямую из вашего браузера</p>
+        <p class="subtitle">Среднее значение после 5 тестов для максимальной точности</p>
         
-        <div class="ping-grid" id="pingGrid">
-            </div>
+        <div class="ping-grid" id="pingGrid"></div>
 
         <button class="btn-check" id="startBtn" onclick="runAllTests()">Запустить тест</button>
     </div>
@@ -246,14 +236,14 @@
             grid.appendChild(card);
         });
 
-        async function ping(host) {
+        async function singlePing(host) {
             const start = performance.now();
             try {
-                await fetch(`https://${host}/?t=${Math.random()}`, { 
+                const response = await fetch(`https://${host}/favicon.ico?t=${Math.random()}`, { 
                     mode: 'no-cors', 
                     cache: 'no-cache' 
                 });
-                return Math.round(performance.now() - start);
+                return performance.now() - start;
             } catch (e) {
                 return null;
             }
@@ -262,19 +252,34 @@
         async function runAllTests() {
             const btn = document.getElementById('startBtn');
             btn.disabled = true;
-            btn.innerText = "Тестирование...";
+            btn.innerText = "Анализ (0/5)...";
 
             const tests = serverList.map(async (server, i) => {
                 const resEl = document.getElementById(`res-${i}`);
                 const dotEl = document.getElementById(`dot-${i}`);
                 
-                resEl.innerText = "...";
+                resEl.innerText = "Замер...";
                 resEl.style.color = "var(--text-dim)";
                 
-                const ms = await ping(server.host);
-                
-                if (ms !== null) {
-                    resEl.innerText = ms + " ms";
+                let totalPing = 0;
+                let successfulAttempts = 0;
+                const ATTEMPTS = 5;
+
+                for (let a = 0; a < ATTEMPTS; a++) {
+                    await new Promise(r => setTimeout(r, 50)); 
+                    const ms = await singlePing(server.host);
+                    
+                    if (ms !== null) {
+                        totalPing += ms;
+                        successfulAttempts++;
+                    }
+                    
+                    if (i === 0) btn.innerText = `Анализ (${a + 1}/${ATTEMPTS})...`;
+                }
+
+                if (successfulAttempts > 0) {
+                    const averagePing = Math.round(totalPing / successfulAttempts);
+                    resEl.innerText = averagePing + " ms";
                     resEl.style.color = "var(--success)";
                     dotEl.className = "status-indicator status-online";
                 } else {
