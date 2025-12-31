@@ -111,6 +111,32 @@
             h1 { font-size: 1.8rem; }
             .content-box { padding: 25px; }
         }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 480px) {
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -207,6 +233,10 @@
     </main>
 
     <footer>
+        <div class="footer-links">
+            <a href="privacy.html" class="footer-link">Политика конфиденциальности</a>
+            <a href="terms.html" class="footer-link">Политика использования</a>
+        </div>
         <p>&copy; 2025 GXVless. Все права защищены.</p>
     </footer>
 
