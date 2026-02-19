@@ -3,241 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GXVless | Быстрый и защищенный доступ</title>
-    <link rel="icon" href="logo.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Telegram: GXVless</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta http-equiv="refresh" content="3;url=https://t.me/+GCZdmquJCUw3OGZi">
+    
     <style>
         :root {
-            --primary: #7700ff;
-            --primary-hover: #8300db;
-            --bg-dark: #0a0b10;
-            --card-bg: #161821;
+            --bg-color: #1c1c1c;
+            --card-bg: #242424;
             --text-main: #ffffff;
-            --text-dim: #a0a0a0;
-            --gradient: linear-gradient(135deg, #9900ff 0%, #5900ff 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            --text-secondary: #aaaaaa;
+            --tg-blue: #24A1DE;
+            --tg-blue-hover: #2196d1;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        header {
-            padding: 20px 5%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background: rgba(10, 11, 16, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero {
             height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: radial-gradient(circle at center, #1a1c2e 0%, var(--bg-dark) 70%);
+            margin: 0;
+            color: var(--text-main);
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-
-        .hero p {
-            color: var(--text-dim);
-            max-width: 600px;
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-        }
-
-        .btn-container {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 16px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-primary {
-            background: var(--gradient);
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(98, 0, 255, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .features {
-            padding: 100px 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
+        .tg-card {
             background: var(--card-bg);
             padding: 40px;
             border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-        }
-
-        .feature-card h3 {
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        footer {
-            padding: 50px 5%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-dim);
+            max-width: 380px;
+            width: 90%;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .btn { width: 100%; justify-content: center; }
+        .tg-logo-wrap {
+            width: 100px;
+            height: 100px;
+            background: var(--tg-blue);
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(36, 161, 222, 0.3);
+        }
+
+        .tg-logo-wrap i {
+            font-size: 50px;
+            color: white;
+            margin-right: 0px;
+            margin-top: 0px;
+        }
+
+        h1 { 
+            font-size: 24px; 
+            margin-bottom: 12px; 
+            font-weight: 600;
+        }
+
+        p { 
+            color: var(--text-secondary); 
+            font-size: 15px; 
+            line-height: 1.5; 
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--tg-blue);
+            color: white;
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--tg-blue-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(36, 161, 222, 0.4);
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+        }
+
+        #timer {
+            color: var(--tg-blue);
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">GXVless</div>
-    </header>
+<div class="tg-card">
+    <div class="tg-logo-wrap">
+        <i class="fa-brands fa-telegram"></i>
+    </div>
+    <h1>GXVless</h1>
+    <p>Переходим в Telegram... <br>Если ничего не произошло, нажмите кнопку.</p>
+    
+    <a href="https://t.me/+GCZdmquJCUw3OGZi" class="btn">ОТКРЫТЬ КАНАЛ</a>
+    
+    <div class="footer">
+        Осталось <span id="timer">3</span> сек.
+    </div>
+</div>
 
-    <section class="hero">
-        <h1>Свобода интернета <br>в один клик</h1>
-        <p>Быстрые протоколы Xray, отсутствие ограничений и полная анонимность. Работает на всех устройствах.</p>
-        
-        <div class="btn-container">
-            <a href="https://t.me/gxvless_bot" class="btn btn-primary">
-                <span>🤖</span> Подключить в Telegram
-            </a>
-            <a href="https://t.me/gxvless" class="btn btn-secondary">
-                <span>📢</span> Наш канал
-            </a>
-            <a href="https://status.gxt.su" class="btn btn-secondary">
-                <span>📊</span> Статус серверов
-            </a>
-            <a href="ping.html" class="btn btn-secondary">
-                <span>📥</span> Проверка узлов
-            </a>
-            <a href="https://dalink.to/gexoty" class="btn btn-secondary">
-                <span>💸</span> Поддержать сервис
-            </a>
-        </div>
-    </section>
-
- <style>
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
+<script>
+    let seconds = 3;
+    const timerElement = document.getElementById('timer');
+    const interval = setInterval(() => {
+        seconds--;
+        if (seconds >= 0) {
+            timerElement.innerText = seconds;
         }
-
-        .footer-link {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
+        if (seconds <= 0) {
+            clearInterval(interval);
+            window.location.href = "https://t.me/+GCZdmquJCUw3OGZi";
         }
+    }, 1000);
+</script>
 
-        .footer-link:hover {
-            color: var(--primary);
-        }
-
-        @media (max-width: 480px) {
-            .footer-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
-
-    <footer>
-        <div class="footer-links">
-            <a href="privacy.html" class="footer-link">Политика конфиденциальности</a>
-            <a href="terms.html" class="footer-link">Политика использования</a>
-        </div>
-        <p>&copy; 2026 GXVless. Все права защищены.</p>
-    </footer>
-
-    <script>
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.style.opacity = "0";
-            card.style.transform = "translateY(20px)";
-            card.style.transition = "all 0.6s ease-out";
-            observer.observe(card);
-        });
-    </script>
 </body>
-
 </html>
-
-
